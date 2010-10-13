@@ -3,13 +3,13 @@ package org.openPyro.aurora.skinClasses{
 	import org.openPyro.painters.GradientFillPainter;
 	import org.openPyro.painters.Stroke;
 	
-	public class GradientRectSkin extends UIControl
+	public class StrokedRectSkin extends UIControl
 	
 	{
 		protected var _gradientRotation:Number = 0;
 		protected var gradientFill:GradientFillPainter;
 		
-		public function GradientRectSkin(gradientFill:GradientFillPainter = null)
+		public function StrokedRectSkin(gradientFill:GradientFillPainter = null)
 		{
 			if(!gradientFill){
 				this.gradientFill = new GradientFillPainter([0x999999,0xdfdfdf],[.6,1],[1,255],_gradientRotation);

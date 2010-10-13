@@ -148,9 +148,9 @@ package org.openPyro.controls
 			
 		}
 		
-		private var _value:Number = 0;
-		private var _minimum:Number = 0;
-		private var _maximum:Number = 100;
+		protected var _value:Number = 0;
+		protected var _minimum:Number = 0;
+		protected var _maximum:Number = 100;
 		
 		/**
 		 * Returns the minimum value for
@@ -197,7 +197,7 @@ package org.openPyro.controls
 		
 		protected var boundsRect:Rectangle;
 		
-		private function onThumbDown(event:ButtonEvent):void{
+		protected function onThumbDown(event:ButtonEvent):void{
 			this._isThumbPressed = true;
 			if(_direction == Direction.HORIZONTAL)
 			{
@@ -211,10 +211,9 @@ package org.openPyro.controls
 			this.addEventListener(Event.ENTER_FRAME, onEnterFrame);
 			_thumbButton.addEventListener(MouseEvent.MOUSE_UP, onThumbUp);
 			stage.addEventListener(MouseEvent.MOUSE_UP, onThumbUp);
-			
 		}
 		
-		private function onEnterFrame(event:Event):void{
+		protected function onEnterFrame(event:Event):void{
 			if(_isThumbPressed){
 				//compute slider value
 				dispatchScrollEvent()
@@ -242,7 +241,7 @@ package org.openPyro.controls
 			}
 		}
 		
-		private function onThumbUp(event:Event):void{
+		protected function onThumbUp(event:Event):void{
 			this.removeEventListener(Event.ENTER_FRAME, onEnterFrame);
 			stage.removeEventListener(MouseEvent.MOUSE_UP, onThumbUp);
 			//this.startDrag(true, new Rectangle(0,0,0,0));
@@ -363,7 +362,7 @@ package org.openPyro.controls
 			return this;
 		}
 		
-		private function positionThumb(v:Number):void
+		protected function positionThumb(v:Number):void
 		{
 			if(!_thumbButton) return;
 			if(_direction == Direction.HORIZONTAL)

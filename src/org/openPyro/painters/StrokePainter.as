@@ -34,6 +34,11 @@ package org.openPyro.painters
 			_left = left
 		}
 		
+		public function set stroke(str:Stroke):void
+		{
+			_stroke = str;
+		}
+		
 		/**
 		 * @inheritDoc
 		 */ 
